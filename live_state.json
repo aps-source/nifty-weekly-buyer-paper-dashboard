@@ -1,5 +1,5 @@
 {
- "last_tick": "2026-10-16 10:00:33.436373",
+ "last_tick": "2026-10-16 10:02:52.169701",
  "engine_status": "running",
  "last_error": null,
  "paper_start": "2026-10-16",
@@ -30,7 +30,7 @@
   "armed": false,
   "stop_prem": null,
   "best_close": 23035.1,
-  "hi_seen": 116.05,
+  "hi_seen": 121.5,
   "pending_exit": null,
   "flat_at": "15:15",
   "regime": "bull",
