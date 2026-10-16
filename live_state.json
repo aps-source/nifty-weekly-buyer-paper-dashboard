@@ -1,0 +1,25 @@
+{
+ "last_tick": "2026-10-16 09:04:45.995833",
+ "engine_status": "running",
+ "last_error": null,
+ "paper_start": "2026-10-16",
+ "equity": 100000,
+ "capital": 100000,
+ "halted_day": false,
+ "halted_week": false,
+ "n_day": 0,
+ "position": null,
+ "snapshot": null,
+ "bars": [],
+ "trades": [],
+ "rules": {
+  "thr": 38,
+  "thr_low_vol": 40,
+  "thr_expansion": 35,
+  "min_diff": 13,
+  "flip": 30,
+  "risk": 0.01,
+  "lot": 65
+ },
+ "backtest": "Tier A 2021-08..2026-10: 1774 trades, PF 0.50, -0.37R/trade net (modelled premiums). Kill rule was hit; paper run at user request."
+}

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NIFTY Weekly Buyer Paper</title>
+<style>
+:root{--bg:#f7f7f5;--card:#fff;--fg:#1d1d1b;--mut:#6b6b66;--line:#e3e3de;--up:#1a7f45;--dn:#c0362c;--acc:#2456a6;--warn:#a86b00}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#151514;--card:#1e1e1c;--fg:#ececea;--mut:#9a9a94;--line:#33332f;--up:#4cc27c;--dn:#ff7a6e;--acc:#7aa7ff;--warn:#e0a83a}}
+:root[data-theme="dark"]{--bg:#151514;--card:#1e1e1c;--fg:#ececea;--mut:#9a9a94;--line:#33332f;--up:#4cc27c;--dn:#ff7a6e;--acc:#7aa7ff;--warn:#e0a83a}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.45 system-ui,-apple-system,Segoe UI,sans-serif}
+main{max-width:1100px;margin:0 auto;padding:16px}h1{font-size:20px;margin:0 0 4px}.mut{color:var(--mut)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin:14px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px}
+.k{font-size:12px;color:var(--mut)}.v{font-size:20px;font-weight:600;font-variant-numeric:tabular-nums}
+.up{color:var(--up)}.dn{color:var(--dn)}.warn{color:var(--warn)}
+table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}th,td{padding:6px 8px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}
+th:first-child,td:first-child{text-align:left}.scroll{overflow-x:auto}h2{font-size:15px;margin:18px 0 8px}
+.note{font-size:12px;color:var(--mut);margin-top:16px}a{color:var(--acc)}
+</style>
+</head>
+<body><main>
+<h1>NIFTY Weekly Buyer: paper trading</h1>
+<div class="mut">ITM1 weekly CE/PE buyer, Tier A rules (trend + price action + volatility). Real Dhan option quotes, no orders. <span id="tick"></span></div>
+<div id="status"></div>
+<div class="grid" id="kpi"></div>
+<h2>Open position</h2><div class="card" id="pos">-</div>
+<h2>Latest 5m bar</h2><div class="card scroll" id="snap">-</div>
+<h2>Trades</h2><div class="card scroll"><table id="trades"></table></div>
+<h2>Today's bars</h2><div class="card scroll"><table id="bars"></table></div>
+<p class="note" id="bt"></p>
+</main>
+<script>
+const f=(x,d=1)=>x==null||x===''?'-':Number(x).toLocaleString('en-IN',{maximumFractionDigits:d,minimumFractionDigits:d});
+const cls=x=>x>0?'up':x<0?'dn':'';
+function card(k,v,c=''){return `<div class="card"><div class="k">${k}</div><div class="v ${c}">${v}</div></div>`}
+async function load(){
+  let s;try{s=await (await fetch('live_state.json?'+Date.now())).json()}catch(e){document.getElementById('status').textContent='No data yet.';return}
+  const age=(Date.now()-new Date(s.last_tick.replace(' ','T')+'+05:30'))/60000;
+  document.getElementById('tick').textContent=`Last tick ${s.last_tick.slice(0,19)} IST`;
+  document.getElementById('status').innerHTML=s.engine_status!=='running'?`<p class="warn">Engine: ${s.engine_status} ${s.last_error||''}</p>`:age>10?`<p class="warn">Heartbeat ${age.toFixed(0)} min old (outside market hours this is normal).</p>`:'';
+  const t=s.trades||[],pnl1=t.reduce((a,x)=>a+x.pnl_1lot,0),w=t.filter(x=>x.pnl_1lot>0).length;
+  document.getElementById('kpi').innerHTML=card('Paper equity (1% risk)','₹'+f(s.equity,0),cls(s.equity-s.capital))+card('1-lot P&L since '+s.paper_start,'₹'+f(pnl1,0),cls(pnl1))+card('Trades / wins',`${t.length} / ${w}`)+card('Trades today',`${s.n_day} / 3`)+card('Halted',s.halted_day?'day limit':s.halted_week?'week limit':'no',s.halted_day||s.halted_week?'warn':'');
+  const p=s.position;
+  document.getElementById('pos').innerHTML=p?`BUY <b>${p.side} ${p.K}</b> exp ${p.expiry} · entry ₹${f(p.entry)} (model ${f(p.entry_model)}, spread ${f(p.spread)}) · spot ${f(p.spot_entry)} · spot SL ${f(p.spot_sl)} · R ${f(p.R)} · T2 ${f(p.t2)} · ${p.armed?'stop at breakeven':'initial stop'} · lots ${p.lots}${p.pending_exit?' · exiting: '+p.pending_exit:''}`:'Flat';
+  const n=s.snapshot;
+  document.getElementById('snap').innerHTML=n?`<table><tr><th>Bar</th><th>Close</th><th>VWAP</th><th>Bull</th><th>Bear</th><th>Threshold</th><th>Regime</th><th>Vol mode</th><th>ADX</th><th>VIX</th></tr><tr><td>${n.start.slice(11,16)}</td><td>${f(n.close)}</td><td>${f(n.vwap)}</td><td class="up">${n.bull}/50</td><td class="dn">${n.bear}/50</td><td>${n.thr}</td><td>${n.regime}</td><td>${n.vmode}</td><td>${f(n.adx)}</td><td>${f(n.vix,2)}</td></tr></table>`:'Waiting for the first 5m close (09:20).';
+  document.getElementById('trades').innerHTML='<tr><th>Date</th><th>Side</th><th>Strike</th><th>Entry</th><th>Model</th><th>Exit</th><th>Reason</th><th>R</th><th>₹/lot net</th><th>Lots</th><th>₹ account</th></tr>'+t.map(x=>`<tr><td>${x.entry_time.slice(0,16)}</td><td>${x.side}</td><td>${x.strike}</td><td>${f(x.entry)}</td><td>${f(x.entry_model)}</td><td>${f(x.exit)}</td><td>${x.exit_reason}</td><td class="${cls(x.r_multiple)}">${f(x.r_multiple,2)}</td><td class="${cls(x.pnl_1lot)}">${f(x.pnl_1lot,0)}</td><td>${x.lots}</td><td class="${cls(x.pnl_account)}">${f(x.pnl_account,0)}</td></tr>`).join('');
+  document.getElementById('bars').innerHTML='<tr><th>Bar</th><th>Close</th><th>Bull</th><th>Bear</th><th>Regime</th><th>Vol mode</th></tr>'+(s.bars||[]).slice().reverse().map(x=>`<tr><td>${x.start.slice(11,16)}</td><td>${f(x.close)}</td><td>${x.bull}</td><td>${x.bear}</td><td>${x.regime}</td><td>${x.vmode}</td></tr>`).join('');
+  document.getElementById('bt').textContent='Backtest before paper start: '+s.backtest;
+}
+load();setInterval(load,30000);
+</script>
+</body></html>
