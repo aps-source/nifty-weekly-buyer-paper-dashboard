@@ -1,5 +1,5 @@
 {
- "last_tick": "2026-10-16 12:09:15.041717",
+ "last_tick": "2026-10-16 12:11:18.434784",
  "engine_status": "running",
  "last_error": null,
  "paper_start": "2026-10-16",
@@ -10,9 +10,9 @@
  "n_day": 3,
  "position": null,
  "snapshot": {
-  "start": "2026-10-16 12:00:00",
-  "close": 23106.25,
-  "vwap": 23072.57295672299,
+  "start": "2026-10-16 12:05:00",
+  "close": 23110.0,
+  "vwap": 23073.47579013619,
   "bull": 46,
   "bear": 0,
   "regime": "bull",
@@ -301,6 +301,14 @@
   {
    "start": "2026-10-16 12:00:00",
    "close": 23106.25,
+   "bull": 46,
+   "bear": 0,
+   "regime": "bull",
+   "vmode": "normal"
+  },
+  {
+   "start": "2026-10-16 12:05:00",
+   "close": 23110.0,
    "bull": 46,
    "bear": 0,
    "regime": "bull",
