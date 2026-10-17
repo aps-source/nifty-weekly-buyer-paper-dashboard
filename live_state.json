@@ -1,5 +1,5 @@
 {
- "last_tick": "2026-10-16 12:13:20.343784",
+ "last_tick": "2026-10-17 22:09:13.821461",
  "engine_status": "running",
  "last_error": null,
  "paper_start": "2026-10-16",
@@ -7,7 +7,7 @@
  "capital": 100000,
  "halted_day": false,
  "halted_week": false,
- "n_day": 3,
+ "n_day": 0,
  "position": null,
  "snapshot": {
   "start": "2026-10-16 12:05:00",
