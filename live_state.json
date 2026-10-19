@@ -1,5 +1,5 @@
 {
- "last_tick": "2026-10-19 09:23:21.856227",
+ "last_tick": "2026-10-19 09:25:22.855666",
  "engine_status": "running",
  "last_error": null,
  "paper_start": "2026-10-16",
@@ -10,11 +10,11 @@
  "n_day": 0,
  "position": null,
  "snapshot": {
-  "start": "2026-10-19 09:15:00",
-  "close": 23153.3,
-  "vwap": 23134.38333333333,
-  "bull": 42,
-  "bear": 0,
+  "start": "2026-10-19 09:20:00",
+  "close": 23106.55,
+  "vwap": 23130.064117802267,
+  "bull": 30,
+  "bear": 4,
   "regime": "neutral",
   "vmode": "normal",
   "thr": 38,
@@ -22,7 +22,7 @@
   "pe_sig": false,
   "adx": 23.036197404283104,
   "atr_ratio": 0.9015898260955676,
-  "vix": 14.31,
+  "vix": 14.47,
   "PDH": 23149.85,
   "PDL": 22913.8,
   "TC": 23108.041666666664,
@@ -39,6 +39,14 @@
    "close": 23153.3,
    "bull": 42,
    "bear": 0,
+   "regime": "neutral",
+   "vmode": "normal"
+  },
+  {
+   "start": "2026-10-19 09:20:00",
+   "close": 23106.55,
+   "bull": 30,
+   "bear": 4,
    "regime": "neutral",
    "vmode": "normal"
   }
