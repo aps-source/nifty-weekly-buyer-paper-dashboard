@@ -1,5 +1,5 @@
 {
- "last_tick": "2026-10-19 09:19:13.540976",
+ "last_tick": "2026-10-19 09:21:20.510310",
  "engine_status": "running",
  "last_error": null,
  "paper_start": "2026-10-16",
@@ -10,308 +10,36 @@
  "n_day": 0,
  "position": null,
  "snapshot": {
-  "start": "2026-10-16 12:05:00",
-  "close": 23110.0,
-  "vwap": 23073.47579013619,
-  "bull": 46,
+  "start": "2026-10-19 09:15:00",
+  "close": 23153.3,
+  "vwap": 23134.38333333333,
+  "bull": 42,
   "bear": 0,
-  "regime": "bull",
+  "regime": "neutral",
   "vmode": "normal",
   "thr": 38,
-  "ce_sig": true,
+  "ce_sig": false,
   "pe_sig": false,
-  "adx": 33.881198509805955,
-  "atr_ratio": 1.1813794558676856,
-  "vix": 13.97,
-  "PDH": 23056.4,
-  "PDL": 22637.4,
-  "TC": 22947.199999999997,
-  "BC": 22846.9,
-  "ORH": 23076.55,
-  "ORL": 22942.15,
-  "e20": 23045.20205006854,
-  "e50": 22923.39188349979,
-  "e200": 22712.743229549837
+  "adx": 23.036197404283104,
+  "atr_ratio": 0.9015898260955676,
+  "vix": 14.31,
+  "PDH": 23149.85,
+  "PDL": 22913.8,
+  "TC": 23108.041666666664,
+  "BC": 23031.824999999997,
+  "ORH": NaN,
+  "ORL": NaN,
+  "e20": 23096.67506004463,
+  "e50": 23004.955920891178,
+  "e200": 22765.132990062157
  },
  "bars": [
   {
-   "start": "2026-10-16 09:15:00",
-   "close": 22955.9,
-   "bull": 38,
-   "bear": 8,
-   "regime": "neutral",
-   "vmode": "normal"
-  },
-  {
-   "start": "2026-10-16 09:20:00",
-   "close": 22987.65,
-   "bull": 34,
-   "bear": 4,
-   "regime": "neutral",
-   "vmode": "normal"
-  },
-  {
-   "start": "2026-10-16 09:25:00",
-   "close": 22952.3,
-   "bull": 22,
-   "bear": 4,
-   "regime": "neutral",
-   "vmode": "normal"
-  },
-  {
-   "start": "2026-10-16 09:30:00",
-   "close": 22932.4,
-   "bull": 18,
-   "bear": 8,
-   "regime": "neutral",
-   "vmode": "normal"
-  },
-  {
-   "start": "2026-10-16 09:35:00",
-   "close": 22938.0,
-   "bull": 18,
-   "bear": 8,
-   "regime": "neutral",
-   "vmode": "normal"
-  },
-  {
-   "start": "2026-10-16 09:40:00",
-   "close": 22974.7,
-   "bull": 38,
-   "bear": 0,
-   "regime": "bull",
-   "vmode": "expansion"
-  },
-  {
-   "start": "2026-10-16 09:45:00",
-   "close": 22963.65,
-   "bull": 34,
-   "bear": 4,
-   "regime": "neutral",
-   "vmode": "expansion"
-  },
-  {
-   "start": "2026-10-16 09:50:00",
-   "close": 22983.65,
-   "bull": 38,
-   "bear": 0,
-   "regime": "bull",
-   "vmode": "expansion"
-  },
-  {
-   "start": "2026-10-16 09:55:00",
-   "close": 23026.95,
-   "bull": 38,
-   "bear": 0,
-   "regime": "bull",
-   "vmode": "expansion"
-  },
-  {
-   "start": "2026-10-16 10:00:00",
-   "close": 23052.5,
-   "bull": 38,
-   "bear": 0,
-   "regime": "bull",
-   "vmode": "expansion"
-  },
-  {
-   "start": "2026-10-16 10:05:00",
-   "close": 23062.85,
+   "start": "2026-10-19 09:15:00",
+   "close": 23153.3,
    "bull": 42,
    "bear": 0,
-   "regime": "bull",
-   "vmode": "expansion"
-  },
-  {
-   "start": "2026-10-16 10:10:00",
-   "close": 23094.3,
-   "bull": 46,
-   "bear": 0,
-   "regime": "bull",
-   "vmode": "expansion"
-  },
-  {
-   "start": "2026-10-16 10:15:00",
-   "close": 23140.4,
-   "bull": 50,
-   "bear": 4,
-   "regime": "bull",
-   "vmode": "expansion"
-  },
-  {
-   "start": "2026-10-16 10:20:00",
-   "close": 23133.8,
-   "bull": 46,
-   "bear": 0,
-   "regime": "bull",
-   "vmode": "expansion"
-  },
-  {
-   "start": "2026-10-16 10:25:00",
-   "close": 23138.85,
-   "bull": 46,
-   "bear": 0,
-   "regime": "bull",
-   "vmode": "expansion"
-  },
-  {
-   "start": "2026-10-16 10:30:00",
-   "close": 23141.9,
-   "bull": 46,
-   "bear": 0,
-   "regime": "bull",
-   "vmode": "normal"
-  },
-  {
-   "start": "2026-10-16 10:35:00",
-   "close": 23130.4,
-   "bull": 46,
-   "bear": 0,
-   "regime": "bull",
-   "vmode": "normal"
-  },
-  {
-   "start": "2026-10-16 10:40:00",
-   "close": 23100.55,
-   "bull": 50,
-   "bear": 4,
-   "regime": "bull",
-   "vmode": "expansion"
-  },
-  {
-   "start": "2026-10-16 10:45:00",
-   "close": 23094.8,
-   "bull": 50,
-   "bear": 4,
-   "regime": "bull",
-   "vmode": "expansion"
-  },
-  {
-   "start": "2026-10-16 10:50:00",
-   "close": 23095.3,
-   "bull": 46,
-   "bear": 0,
-   "regime": "bull",
-   "vmode": "expansion"
-  },
-  {
-   "start": "2026-10-16 10:55:00",
-   "close": 23109.65,
-   "bull": 46,
-   "bear": 0,
-   "regime": "bull",
-   "vmode": "expansion"
-  },
-  {
-   "start": "2026-10-16 11:00:00",
-   "close": 23104.2,
-   "bull": 46,
-   "bear": 0,
-   "regime": "bull",
-   "vmode": "expansion"
-  },
-  {
-   "start": "2026-10-16 11:05:00",
-   "close": 23068.25,
-   "bull": 42,
-   "bear": 0,
-   "regime": "bull",
-   "vmode": "expansion"
-  },
-  {
-   "start": "2026-10-16 11:10:00",
-   "close": 23089.1,
-   "bull": 46,
-   "bear": 0,
-   "regime": "bull",
-   "vmode": "normal"
-  },
-  {
-   "start": "2026-10-16 11:15:00",
-   "close": 23082.05,
-   "bull": 46,
-   "bear": 0,
-   "regime": "bull",
-   "vmode": "expansion"
-  },
-  {
-   "start": "2026-10-16 11:20:00",
-   "close": 23110.1,
-   "bull": 46,
-   "bear": 0,
-   "regime": "bull",
-   "vmode": "normal"
-  },
-  {
-   "start": "2026-10-16 11:25:00",
-   "close": 23117.5,
-   "bull": 46,
-   "bear": 0,
-   "regime": "bull",
-   "vmode": "normal"
-  },
-  {
-   "start": "2026-10-16 11:30:00",
-   "close": 23121.7,
-   "bull": 46,
-   "bear": 0,
-   "regime": "bull",
-   "vmode": "normal"
-  },
-  {
-   "start": "2026-10-16 11:35:00",
-   "close": 23123.15,
-   "bull": 46,
-   "bear": 0,
-   "regime": "bull",
-   "vmode": "normal"
-  },
-  {
-   "start": "2026-10-16 11:40:00",
-   "close": 23121.95,
-   "bull": 46,
-   "bear": 0,
-   "regime": "bull",
-   "vmode": "normal"
-  },
-  {
-   "start": "2026-10-16 11:45:00",
-   "close": 23115.15,
-   "bull": 46,
-   "bear": 0,
-   "regime": "bull",
-   "vmode": "normal"
-  },
-  {
-   "start": "2026-10-16 11:50:00",
-   "close": 23120.3,
-   "bull": 46,
-   "bear": 0,
-   "regime": "bull",
-   "vmode": "normal"
-  },
-  {
-   "start": "2026-10-16 11:55:00",
-   "close": 23122.15,
-   "bull": 46,
-   "bear": 0,
-   "regime": "bull",
-   "vmode": "normal"
-  },
-  {
-   "start": "2026-10-16 12:00:00",
-   "close": 23106.25,
-   "bull": 46,
-   "bear": 0,
-   "regime": "bull",
-   "vmode": "normal"
-  },
-  {
-   "start": "2026-10-16 12:05:00",
-   "close": 23110.0,
-   "bull": 46,
-   "bear": 0,
-   "regime": "bull",
+   "regime": "neutral",
    "vmode": "normal"
   }
  ],
